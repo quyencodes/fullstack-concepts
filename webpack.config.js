@@ -1,7 +1,6 @@
 import webpack from 'webpack'
 import path from 'path'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
-import dotenv from 'dotenv'
 
 export default {
   mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',

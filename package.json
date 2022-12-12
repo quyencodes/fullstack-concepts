@@ -7,23 +7,20 @@
   "scripts": {
     "build": "webpack",
     "dev": "npx webpack-dev-server --port=3000",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "npx eslint -c ./.eslintrc.json src/**/*"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/quyencodes/fullstack-concepts.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/quyencodes/fullstack-concepts/issues"
+  "lint-staged": {
+    "./src/**/*.{js,jsx}": "eslint --fix --cache"
   },
-  "homepage": "https://github.com/quyencodes/fullstack-concepts#readme",
   "devDependencies": {
     "@swc/core": "^1.3.22",
     "eslint": "^8.29.0",
     "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.31.11",
     "html-webpack-plugin": "^5.5.0",
