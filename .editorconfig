@@ -1,0 +1,14 @@
+# top most editorconfig file (you can have many editorconfig files)
+root = true
+
+# wildcard - for every file
+[*]
+# set newline endings to be lf
+end_of_line = lf
+# always have a newline at the end of a file
+insert_final_newline = true
+# set default charset
+charset = utf-8
+# space indentation rule
+indent_style = space
+indent_size = 2
