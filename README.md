@@ -21,10 +21,10 @@ and whichever database you prefer. For this exercise, the following databases I'
   - [Table of Contents](#table-of-contents)
   - [Getting Started](#getting-started)
     - [package.json and prettier/eslint/editorconfig wombocombo](#packagejson-and-prettiereslinteditorconfig-wombocombo)
-    - [webpack dev server bundler and swc compiler](#webpack-dev-server-bundler-and-swc-compiler)
-  - [Initial Files (src/dist)](#initial-files-srcdist)
+  - [webpack dev server bundler and swc compiler](#webpack-dev-server-bundler-and-swc-compiler)
+    - [Initial Files (src/dist)](#initial-files-srcdist)
     - [Test on the Browser](#test-on-the-browser)
-    - [Creating a Server and Database](#creating-a-server-and-database)
+  - [Creating a Server and Database](#creating-a-server-and-database)
     - [Setting up our Database](#setting-up-our-database)
     - [Setting up our Express.js Server](#setting-up-our-expressjs-server)
   - [Contributors](#contributors)
@@ -59,7 +59,7 @@ npx install-peerdeps --dev eslint-config-airbnb
 :-:
 <img src="https://user-images.githubusercontent.com/104607182/230505198-86deb36d-3bcb-4d4d-bbce-2f4220e0f55b.png">|
 
-### webpack dev server bundler and swc compiler
+## webpack dev server bundler and swc compiler
 
 Webpack is the OG of module bundlers and it's main purpose is bundling JavaScript files with dependencies into static assets for the browser. With an appropriate loader, we can also bundle HTML, CSS, and images into static assets as well. swc is a rust-based platform that compiles JavaScript files and outputs code that is supported by a majority of browsers. As of April 2022, swc is 20x faster than Babel. We'll be using the swc loader because of this.
 
@@ -82,7 +82,7 @@ npm i --save-dev css-loader file-loader
 
 3. Copy over the `webpack.config.js` in this repo over to your new project. Webpack is quite complex and has a steep learning curve, so if you want to learn more about the technicalities of it I suggest you learn it individually if interested, but for purposes of this repo I have provided a good foundation to start from.
 
-## Initial Files (src/dist)
+### Initial Files (src/dist)
 
 1. Create a src and dist folder. Src is where we write all of our source code and dist is where all of our static files are outputted.
 
@@ -128,7 +128,7 @@ and you should see your code from your App.jsx rendered on the window.
 :-:
 <img src="https://user-images.githubusercontent.com/104607182/230524619-2ea30163-76e6-420b-8c3e-3a20a7155084.png">|
 
-### Creating a Server and Database
+## Creating a Server and Database
 For our server, we'll be mainly using `Express.js`, and the choice of database is up to you. For the instructions, I'll be going over a simple `MongoDB database` setup.
 
 1. Create a server and db folder. I wish there was a universal all-in-one guide on folder naming conventions, but there really isn't. If you find yourself finding better naming conventions for these folders, feel free too. Anyways, your file structure should look like the below.
