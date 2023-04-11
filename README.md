@@ -57,8 +57,7 @@ npx install-peerdeps --dev eslint-config-airbnb
 
 | Checkpoint 1
 :-:
-<img src="https://user-images.githubusercontent.com/104607182/230505198-86deb36d-3bcb-4d4d-bbce-2f4220e0f55b.png">
-|
+<img src="https://user-images.githubusercontent.com/104607182/230505198-86deb36d-3bcb-4d4d-bbce-2f4220e0f55b.png">|
 
 ### webpack dev server bundler and swc compiler
 
@@ -127,8 +126,7 @@ and you should see your code from your App.jsx rendered on the window.
 
 | Checkpoint 2
 :-:
-<img src="https://user-images.githubusercontent.com/104607182/230524619-2ea30163-76e6-420b-8c3e-3a20a7155084.png">
-|
+<img src="https://user-images.githubusercontent.com/104607182/230524619-2ea30163-76e6-420b-8c3e-3a20a7155084.png">|
 
 ### Creating a Server and Database
 For our server, we'll be mainly using `Express.js`, and the choice of database is up to you. For the instructions, I'll be going over a simple `MongoDB database` setup.
@@ -189,10 +187,9 @@ Remember we're working from back to front. Now that we have our database set up,
 4. Set the port you want your local express application to listen too, and start the local instance.
 5. Please run the following command in the command line `npm run server` and if you added `console.log` statements it should reply back with:
 
-```
-Server now listening on PORT XXXX
-Connected to database successfully
-```
+| Checkpoint 3
+:-:
+<img src="https://user-images.githubusercontent.com/104607182/231067059-7851d219-447f-4922-81f8-3eb718812c85.png">|
 
 You've now completed the basic set up for a simple CRUD application. This repository only contains the setup files to get you started coding up an application. If you want to see what a complete application looks like, please refer here.
 
