@@ -161,7 +161,7 @@ Listed below are some steps to set up our database and connect it to our model a
 2. Open a connection to our MongoDB database via <a ref="https://mongoosejs.com/docs/connections.html">URI</a>
 3. Create our <a ref='https://mongoosejs.com/docs/guide.html'>Schema(s)</a>. Each schema maps to a MongoDB collection and defines the shape of the documents within that collection. For purposes of this demonstration, we'll be making a simple anime watchlist application. Try to create a schema yourself using documentation, but refer below if needed to see how I've made it.
 
-```json
+```bash
 const animeSchema = new mongoose.Schema({
   title: {
     type: String,
