@@ -104,11 +104,11 @@ npm i react react-dom
 2. In `App.jsx`, let's create a parent component in our new React app.
 
 ```js
-import react from 'react;
+import react from 'react';
 
 export default function App() {
   return (
-    <main>
+    <main className="container">
       <div>hello world</div>
     </main>
   )
