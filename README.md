@@ -35,25 +35,25 @@ Please follow the steps below, step-by-step, to setup the appropriate packages i
 
 ### package.json and prettier/eslint/editorconfig wombocombo
 
-1. To create <a ref="https://blog.ezekielekunola.com/understanding-the-package.json-file">package.json</a> and skip <a ref="https://docs.npmjs.com/cli/v9/commands/npm-init">the questionnaire altogether</a>, open VS code terminal with `ctrl + tilda` and write in the terminal the following command:
+1. To create <a href="https://blog.ezekielekunola.com/understanding-the-package.json-file">package.json</a> and skip <a href="https://docs.npmjs.com/cli/v9/commands/npm-init">the questionnaire altogether</a>, open VS code terminal with `ctrl + backtick mark` and write in the terminal the following command:
 
 ```
 npm init -y
 ```
 
-2. To setup <a ref="https://prettier.io/docs/en/options.html">prettier</a>, <a ref="https://eslint.org/">eslint</a>, <a ref="https://editorconfig.org/">editorconfig</a> wombocombo as <a ref="https://www.knowledgehut.com/blog/web-development/npm-install-dev-dependencies">dev dependencies.</a> These extensions are essential when working in codebases where many people are collaborating. Eslint will help enforce code styles, prettier will format code, and editorconfig will enforce defined coding styles for multiple developers across multiple devices: you can think linux, mac, and windows operating systems. Please make sure you have prettier and eslint installed on vscode.
+2. To setup <a href="https://prettier.io/docs/en/options.html">prettier</a>, <a href="https://eslint.org/">eslint</a>, <a ref="https://editorconfig.org/">editorconfig</a> wombocombo as <a href="https://www.knowledgehut.com/blog/web-development/npm-install-dev-dependencies">dev dependencies.</a> These extensions are essential when working in codebases where many people are collaborating. Eslint will help enforce code styles, prettier will format code, and editorconfig will enforce defined coding styles for multiple developers across multiple devices: you can think linux, mac, and windows operating systems. Please make sure you have prettier and eslint installed on vscode.
 
 ```
 npm i -D prettier eslint-plugin-prettier eslint-config-prettier eslint-plugin-node eslint-config-node
 ```
 
-3. (<b>Optional</b>) In terms of style guides, Airbnb has one of the most popular for writing concise, clean and readable JavaScript code. Here are a few <a ref="https://tinyurl.com/5cmhcfxf">examples</a> if you're interested in learning more. The Airbnb style guide is quite strict, so this is an <b>optional step</b>.
+3. (<b>Optional</b>) In terms of style guides, Airbnb has one of the most popular for writing concise, clean and readable JavaScript code. Here are a few <a href="https://tinyurl.com/5cmhcfxf">examples</a> if you're interested in learning more. The Airbnb style guide is quite strict, so this is an <b>optional step</b>.
 
 ```
 npx install-peerdeps --dev eslint-config-airbnb
 ```
 
-1. Now that you have the wombocombo setup, please <b>copy and paste the `.editorconfig`, `.eslintrc.json` and `.prettierrc` files</b> in this github repo over to your new project. I've already created the config files so that you can start coding. If you'd like to make your own changes, please refer to docs and online resources. To setup the config files yourself and learn more, refer to this <a ref="https://www.youtube.com/watch?v=SydnKbGc7W8&t=378s&ab_channel=TraversyMedia">video</a>. At this stage, your repository should look similar to the photo below.
+1. Now that you have the wombocombo setup, please <b>copy and paste the `.editorconfig`, `.eslintrc.json` and `.prettierrc` files</b> in this github repo over to your new project. I've already created the config files so that you can start coding. If you'd like to make your own changes, please refer to docs and online resources. To setup the config files yourself and learn more, refer to this <a href="https://www.youtube.com/watch?v=SydnKbGc7W8&t=378s&ab_channel=TraversyMedia">video</a>. At this stage, your repository should look similar to the photo below.
 
 | Checkpoint 1
 :-:
@@ -93,17 +93,60 @@ The file structure we should have is:
   - index.jsx (attach React/HTML to the DOM)
   - index.html (where we initialize our root/app)
 
-As an exercise, please fill out `App.jsx`, `index.jsx`, and `index.html` yourself. Refer to the official react docs and look up <a href="https://react.dev/reference/react-dom/client/createRoot">react-dom/client</a> on how to get started. If needed, feel free to return to the github repo to see how I've got it set up.
+As an exercise, please fill out `App.jsx`, `index.jsx`, and `index.html` yourself. Refer to the official react docs and look up <a href="https://react.dev/reference/react-dom/client/createRoot">react-dom/client</a> on how to get started. However, if you're struggling feel free to continue along for the answer.
 
-1. Install react and react-dom packages
+1. Install react and react-dom packages.
 
 ```
 npm i react react-dom
 ```
 
+2. In `App.jsx`, let's create a parent component in our new React app.
+
+```js
+import react from 'react;
+
+export default function App() {
+  return (
+    <main>
+      <div>hello world</div>
+    </main>
+  )
+}
+```
+
+3. In `index.jsx`, please insert the following code:
+
+```js
+import react from 'react'
+import { createRoot } from 'react-dom/client'
+import App from './App.jsx'
+
+const root = createRoot(document.getElementById('app'))
+root.render(<App/>)
+```
+
+4. In `index.html`, please include the following code:
+
+```js
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Name Here</title>
+    <div id="app"></div>
+  </head>
+  <body></body>
+</html>
+```
+
+### Test on the Browser
+
 Now we're at the point where we can start seeing our code up on the browser.
 
-2. Navigate to `package.json` and under the `scripts` property write the following script commands:
+1. Navigate to `package.json` and under the `scripts` property write the following script commands:
 
 ```json
 "scripts": {
@@ -114,11 +157,9 @@ Now we're at the point where we can start seeing our code up on the browser.
 },
 ```
 
-### Test on the Browser
+2. Write `npm run build` in the terminal. Build involves telling webpack we want to generate the files and put them in the `/dist` folder. You should see two files output to the dist folder called bundle.js and index.html. These are the files webpack has bundled and the browser is parsing. Now write `npm run dev` to begin the webpack-dev server and to get the code on the browser locally.
 
-1. Write `npm run build` in the terminal. Build involves telling webpack we want to generate the files and put them in the `/dist` folder. You should see two files output to the dist folder called bundle.js and index.html. These are the files webpack has bundled and the browser is parsing. Now write `npm run dev` to begin the webpack-dev server and to get the code on the browser locally.
-
-2. Now open up your favorite browser, put
+3. Now open up your favorite browser, put
 ```
 http://localhost:3000
 ```
@@ -139,7 +180,7 @@ For our server, we'll be mainly using `Express.js`, and the choice of database i
   - controller.js (where we handle our requests and routes)
   - db.js (where we set up our database)
 
-Generally, if there isn't a configuration set that specifies which file to look for first, Node.js  will default to using index.js if there is a file of that name in the folder it's searching in. Thus, why we are using index.js as our main files above. Learn more <a ref="https://forum.freecodecamp.org/t/why-is-there-always-an-index-html-file-and-an-index-js-file/479063/2">here</a>.
+Generally, if there isn't a configuration set that specifies which file to look for first, Node.js  will default to using index.js if there is a file of that name in the folder it's searching in. Thus, why we are using index.js as our main files above. Learn more <a href="https://forum.freecodecamp.org/t/why-is-there-always-an-index-html-file-and-an-index-js-file/479063/2">here</a>.
 
 Why I am using certain naming conventions like `model.js` and `controller.js` is because I'm generally following the MVC pattern of web development. MVC is a popular architecture for build web applications.
 
@@ -158,8 +199,8 @@ npm install mongoDB mongoose --save
 Listed below are some steps to set up our database and connect it to our model and server. Please interpret the below as skeleton code if you will.
 
 1. Import mongoose in the file
-2. Open a connection to our MongoDB database via <a ref="https://mongoosejs.com/docs/connections.html">URI</a>
-3. Create our <a ref='https://mongoosejs.com/docs/guide.html'>Schema(s)</a>. Each schema maps to a MongoDB collection and defines the shape of the documents within that collection. For purposes of this demonstration, we'll be making a simple anime watchlist application. Try to create a schema yourself using documentation, but refer below if needed to see how I've made it.
+2. Open a connection to our MongoDB database via <a href="https://mongoosejs.com/docs/connections.html">URI</a>
+3. Create our <a href='https://mongoosejs.com/docs/guide.html'>Schema(s)</a>. Each schema maps to a MongoDB collection and defines the shape of the documents within that collection. For purposes of this demonstration, we'll be making a simple anime watchlist application. Try to create a schema yourself using documentation, but refer below if needed to see how I've made it.
 
 ```js
 const animeSchema = new mongoose.Schema({
@@ -175,8 +216,8 @@ const animeSchema = new mongoose.Schema({
 })
 ```
 
-4. To use our schema definition, we need to convert our Schema into a <a ref="https://mongoosejs.com/docs/models.html">Model</a>. An instance of a model is called a document/record.
-5. Once we have our schema(s) and model(s) completed, we'll <a ref="https://www.geeksforgeeks.org/what-is-export-default-in-javascript/#">export</a> our database
+4. To use our schema definition, we need to convert our Schema into a <a href="https://mongoosejs.com/docs/models.html">Model</a>. An instance of a model is called a document/record.
+5. Once we have our schema(s) and model(s) completed, we'll <a href="https://www.geeksforgeeks.org/what-is-export-default-in-javascript/#">export</a> our database
 
 ### Setting up our Express.js Server
 Remember we're working from back to front. Now that we have our database set up, we want to set up our server locally. We'll be using Express for this exercise because its simple and the documentation is easy to navigate.
