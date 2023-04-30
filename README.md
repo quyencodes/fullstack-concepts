@@ -115,7 +115,7 @@ export default function App() {
 }
 ```
 
-3. In `index.jsx`, please insert the following code:
+3. In `index.js`, please insert the following code:
 
 ```js
 import react from 'react'
