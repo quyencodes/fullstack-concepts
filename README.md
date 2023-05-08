@@ -148,7 +148,10 @@ Now we're at the point where we can start seeing our code up on the browser.
 
 1. Navigate to `package.json` and under the `scripts` property write the following script commands:
 
+- We specify the type to be module to use `import` and `export` statements (ES modules), which are used in modern web browsers. The alternative is to utilize CommonJS module format, like `require()` and `module.exports` statements that are typically found in earlier versions of Node.js, to do so just exclude the type property altogether in package.json. To learn more, please click <a ref="https://blog.logrocket.com/commonjs-vs-es-modules-node-js/" target="_blank">here</a>.
+
 ```json
+"type": "module",
 "scripts": {
   "build": "webpack",
   "dev": "npx webpack-dev-server --port=3000",
@@ -157,9 +160,9 @@ Now we're at the point where we can start seeing our code up on the browser.
 },
 ```
 
-2. Write `npm run build` in the terminal. Build involves telling webpack we want to generate the files and put them in the `/dist` folder. You should see two files output to the dist folder called bundle.js and index.html. These are the files webpack has bundled and the browser is parsing. Now write `npm run dev` to begin the webpack-dev server and to get the code on the browser locally.
+1. Write `npm run build` in the terminal. Build involves telling webpack we want to generate the files and put them in the `/dist` folder. You should see two files output to the dist folder called bundle.js and index.html. These are the files webpack has bundled and the browser is parsing. Now write `npm run dev` to begin the webpack-dev server and to get the code on the browser locally.
 
-3. Now open up your favorite browser, put
+2. Now open up your favorite browser, put
 ```
 http://localhost:3000
 ```

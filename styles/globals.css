@@ -1,0 +1,48 @@
+:root {
+  /* ... */
+}
+
+html {
+  font-family: 'Inter', sans-serif;
+  background: #fffffa;
+}
+
+.navbar {
+  height: 64px;
+  display: flex;
+  background-color: #ccc;
+}
+
+section {
+  padding: 4rem 0;
+}
+
+@media screen and (min-width: 1441px) {
+  .container {
+    padding-inline: 12rem;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .container {
+    padding-inline: 6rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    padding-inline: 4rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding-inline: 2rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    padding-inline: 1rem;
+  }
+}
