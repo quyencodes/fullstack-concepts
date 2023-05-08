@@ -1,13 +1,9 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 
 export default function App() {
   return (
-    <div className="container">
-      <div>hello world</div>
-      <div>hi again world</div>
-      <div className="happy">test</div>
-      <div className="happy2">test</div>
-      <div className="change">change</div>
-    </div>
+    <main className="container">
+      <div>Welcome to Full Stack Concepts by Quyen Hoang</div>
+    </main>
   )
 }
